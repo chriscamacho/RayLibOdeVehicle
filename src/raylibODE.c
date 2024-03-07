@@ -145,7 +145,7 @@ vehicle* CreateVehicle(dSpaceID space, dWorldID world)
     // car body
     dMass m;
     dMassSetBox(&m, 1, carScale.x, carScale.y, carScale.z);  // density
-    dMassAdjust(&m, 550); // mass
+    dMassAdjust(&m, 150); // mass
     
     car->bodies[0] = dBodyCreate(world);
     dBodySetMass(car->bodies[0], &m);

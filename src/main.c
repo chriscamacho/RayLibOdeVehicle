@@ -270,7 +270,7 @@ int main(void)
 
         // give the body a random position and rotation
         dBodySetPosition(obj[i],
-                            dRandReal() * 10 - 5, 4+(i/10), dRandReal() * 10 - 5);
+                            dRandReal() * 40 - 5, 4+(i/10), dRandReal() * 40 - 5);
         dRFromAxisAndAngle(R, dRandReal() * 2.0 - 1.0,
                             dRandReal() * 2.0 - 1.0,
                             dRandReal() * 2.0 - 1.0,
@@ -371,7 +371,7 @@ int main(void)
                     dBodyGetMass (obj[i], &mass);
                     // give some object more force than others
                     float f = (6+(((float)i/numObj)*4)) * mass.mass;
-                    dBodyAddForce(obj[i], rndf(-f,f), f*4, rndf(-f,f));
+                    dBodyAddForce(obj[i], rndf(-f,f), f*10, rndf(-f,f));
                 }
             }
 
