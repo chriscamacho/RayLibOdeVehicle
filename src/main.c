@@ -270,7 +270,7 @@ int main(void)
 
         // give the body a random position and rotation
         dBodySetPosition(obj[i],
-                            dRandReal() * 40 - 5, 4+(i/10), dRandReal() * 40 - 5);
+                            dRandReal() * 80 - 40, 4+(i/10), dRandReal() * 80 - 40);
         dRFromAxisAndAngle(R, dRandReal() * 2.0 - 1.0,
                             dRandReal() * 2.0 - 1.0,
                             dRandReal() * 2.0 - 1.0,
@@ -378,10 +378,20 @@ int main(void)
             
             if(pos[1]<-10) {
                 // teleport back if fallen off the ground
-                dBodySetPosition(obj[i], dRandReal() * 10 - 5,
-                                        12 + rndf(1,2), dRandReal() * 10 - 5);
+                dBodySetPosition(obj[i], dRandReal() * 80 - 40,
+                                        12 + rndf(1,2), dRandReal() * 80 - 40);
                 dBodySetLinearVel(obj[i], 0, 0, 0);
                 dBodySetAngularVel(obj[i], 0, 0, 0);
+            }
+        }
+        
+        const dReal* pos = dBodyGetPosition(car->bodies[0]);
+        if (pos[1]<-10) {
+            for (int i=0; i<6; i++) {
+                dBodySetPosition(car->bodies[i], 0, 6, 0);
+                dBodySetLinearVel(car->bodies[i], 0, 0, 0);
+                dBodySetAngularVel(car->bodies[i], 0, 0, 0);
+                
             }
         }
         
