@@ -4,7 +4,7 @@ APPNAME:=$(shell basename `pwd`)
 INSTR:= -fsanitize=address,leak,undefined,pointer-compare,pointer-subtract
 INSTR+= -fno-omit-frame-pointer
 
-LDFLAGS:=-L ../raylib/src -lm -lraylib -lX11 -ldl -pthread -L lib
+LDFLAGS:=-L./lib -L../raylib/src -lm -lraylib -lX11 -ldl -pthread -L lib
 LDFLAGS+=-L ode/ode/src/.libs/ -lode -lstdc++
 
 CFLAGS:= -Wfatal-errors -pedantic -Wall -Wextra -Werror -I ode/include/

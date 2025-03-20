@@ -147,7 +147,8 @@ int main(void)
     // so rather than muck about at render time just make one the right orientation
     cylinder = LoadModel("data/cylinder.obj");
     
-    Model ground = LoadModel("data/ground.obj");
+    Model ground = LoadModel("data/ground2.obj");
+    
 
     // texture the models
     Texture earthTx = LoadTexture("data/earth.png");
