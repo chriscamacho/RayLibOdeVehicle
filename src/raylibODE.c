@@ -137,7 +137,7 @@ void drawAllSpaceGeoms(dSpaceID space)
 vehicle* CreateVehicle(dSpaceID space, dWorldID world)
 {
     // TODO these should be parameters
-    Vector3 carScale = (Vector3){2.5, 0.5, 1.4};
+    Vector3 carScale = (Vector3){2.5, 0.5, 2.0};
     float wheelRadius = 0.5, wheelWidth = 0.45;
     
     vehicle* car = RL_MALLOC(sizeof(vehicle));

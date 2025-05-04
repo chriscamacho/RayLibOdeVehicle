@@ -35,7 +35,8 @@
 /*
  * get ODE from https://bitbucket.org/odedevs/ode/downloads/
  *
- * extract ode 0.16.2 into the main directory of this project
+ * extract ode 0.16.6 into the main directory of this project
+ * make a symlink to ode or rename the directory to ode
  * 
  * cd into it
  * 
@@ -93,7 +94,7 @@ static void nearCallback(void *data, dGeomID o1, dGeomID o2)
         contact[i].surface.mode = dContactSlip1 | dContactSlip2 |
                                     dContactSoftERP | dContactSoftCFM | dContactApprox1;
         contact[i].surface.mu = 1000;
-        contact[i].surface.slip1 = 0.0001;
+        contact[i].surface.slip1 = 0.001;
         contact[i].surface.slip2 = 0.001;
         contact[i].surface.soft_erp = 0.05;
         contact[i].surface.soft_cfm = 0.0003;
